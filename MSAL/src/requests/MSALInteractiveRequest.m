@@ -29,7 +29,10 @@
 
 #import "MSALAuthority.h"
 #import "MSALUIBehavior_Internal.h"
+
+#if !TARGET_OS_TV
 #import "MSALWebUI.h"
+#endif
 #import "MSALTelemetryApiId.h"
 
 #import "MSALPkce.h"
@@ -184,6 +187,8 @@ static MSALInteractiveRequest *s_currentRequest = nil;
     MSID_LOG_INFO_PII(_parameters, @"Launching Web UI with URL: %@", authorizationUrl);
     s_currentRequest = self;
     
+#if !TARGET_OS_TV
+    
     [MSALWebUI startWebUIWithURL:authorizationUrl
                          context:_parameters
                  completionBlock:^(NSURL *response, NSError *error)
@@ -235,6 +240,8 @@ static MSALInteractiveRequest *s_currentRequest = nil;
          
          ERROR_COMPLETION(_parameters, MSALErrorBadAuthorizationResponse, @"No code or error in server response.");
      }];
+    
+#endif
 
     
 }

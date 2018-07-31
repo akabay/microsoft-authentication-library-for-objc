@@ -24,8 +24,11 @@
 // THE SOFTWARE.
 //
 //------------------------------------------------------------------------------
+#if !TARGET_OS_TV
 
 #import <XCTest/XCTest.h>
+
+#endif
 
 /*!
     A base test case class for all MSAL tests that will reset all our test

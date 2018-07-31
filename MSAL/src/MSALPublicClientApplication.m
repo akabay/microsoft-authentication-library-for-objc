@@ -36,7 +36,9 @@
 #import "MSALRequestParameters.h"
 #import "MSALUIBehavior_Internal.h"
 #import "MSALURLSession.h"
+#if !TARGET_OS_TV
 #import "MSALWebUI.h"
+#endif
 #import "MSALTelemetryApiId.h"
 #import "MSALTelemetry.h"
 #import "MSIDKeychainTokenCache.h"
@@ -213,6 +215,8 @@
 
 #pragma SafariViewController Support
 
+#if !TARGET_OS_TV
+
 + (BOOL)handleMSALResponse:(NSURL *)response
 {
     if (!response)
@@ -257,6 +261,8 @@
 {
     [MSALWebUI cancelCurrentWebAuthSession];
 }
+
+#endif
 
 #pragma mark -
 #pragma mark acquireToken

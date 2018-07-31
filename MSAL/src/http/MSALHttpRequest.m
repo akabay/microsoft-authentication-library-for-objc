@@ -189,7 +189,7 @@ static NSString *const s_kHttpHeaderDelimeter = @",";
                                       {
                                           [event setHttpErrorCode:[NSString stringWithFormat: @"%ld", (long)[error code]]];
                                           [event setHttpErrorDomain:[error domain]];
-                                          [[MSIDTelemetry sharedInstance] stopEvent:[_context telemetryRequestId] event:event];
+                                          [[MSIDTelemetry sharedInstance] stopEvent:[self.context telemetryRequestId] event:event];
                                           
                                           completionHandler(nil, error);
                                           return;
@@ -203,7 +203,7 @@ static NSString *const s_kHttpHeaderDelimeter = @",";
                                       [event setHttpRequestIdHeader:[msalResponse.headers objectForKey:MSID_OAUTH2_CORRELATION_ID_REQUEST_VALUE]];
                                       [event setOAuthErrorCodeFromResponseData:msalResponse.body];
                                       
-                                      [[MSIDTelemetry sharedInstance] stopEvent:[_context telemetryRequestId] event:event];
+                                      [[MSIDTelemetry sharedInstance] stopEvent:[self.context telemetryRequestId] event:event];
                                       
                                       completionHandler(msalResponse, error);
                                   }];

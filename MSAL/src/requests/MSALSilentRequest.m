@@ -135,10 +135,10 @@
             return;
         }
 
-        MSID_LOG_INFO(_parameters, @"Refreshing access token");
-        MSID_LOG_INFO_PII(_parameters, @"Refreshing access token");
+        MSID_LOG_INFO(self.parameters, @"Refreshing access token");
+        MSID_LOG_INFO_PII(self.parameters, @"Refreshing access token");
 
-        _authority = authority;
+        authority = authority;
 
         [super acquireToken:completionBlock];
     }];

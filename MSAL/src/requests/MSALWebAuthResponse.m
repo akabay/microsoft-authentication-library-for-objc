@@ -101,7 +101,7 @@ NSString *const s_kWwwAuthenticateHeader = @"Accept";
 
                 // retry once after hald second
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [_request resend:completionHandler];
+                    [self.self->_request resend:completionHandler];
                 });
                 return;
             }

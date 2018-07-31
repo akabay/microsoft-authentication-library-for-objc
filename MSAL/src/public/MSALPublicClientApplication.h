@@ -116,6 +116,8 @@
 
 #pragma SafariViewController Support
 
+#if !TARGET_OS_TV
+
 /*!
     Ask MSAL to handle a URL response.
     
@@ -132,6 +134,8 @@
     in a cancelation error.
  */
 + (void)cancelCurrentWebAuthSession;
+
+#endif
 
 #pragma mark -
 #pragma mark acquireToken
