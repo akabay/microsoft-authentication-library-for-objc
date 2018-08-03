@@ -72,8 +72,7 @@ static NSDictionary *s_userInfoKeyMapping;
                                    @(MSIDErrorServerInvalidGrant) : @(MSALErrorInvalidGrant),
                                    @(MSIDErrorServerInvalidScope) : @(MSALErrorInvalidScope),
                                    @(MSIDErrorServerInvalidState) : @(MSALErrorInvalidState),
-                                   @(MSIDErrorServerNonHttpsRedirect) : @(MSALErrorNonHttpsRedirect),
-                                   @(MSIDErrorServerProtectionPoliciesRequired) : @(MSALErrorServerProtectionPoliciesRequired)
+                                   @(MSIDErrorServerNonHttpsRedirect) : @(MSALErrorNonHttpsRedirect)
                                    }
                            };
     

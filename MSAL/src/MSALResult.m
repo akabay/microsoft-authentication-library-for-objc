@@ -77,7 +77,7 @@
 
     MSALAccount *account = [[MSALAccount alloc] initWithUsername:idTokenClaims.preferredUsername
                                                                  name:idTokenClaims.name
-                                                        homeAccountId:accessToken.accountIdentifier.homeAccountId
+                                                        homeAccountId:accessToken.homeAccountId
                                                        localAccountId:idTokenClaims.objectId
                                                           environment:accessToken.authority.msidHostWithPortIfNecessary
                                                              tenantId:idTokenClaims.tenantId
